@@ -21,12 +21,6 @@ static void* H(const void* x,
                void* out,
                const size_t outlen);
 
-// Wrapper for sha256
-static void* sha256(const void* data,
-                    const size_t datalen,
-                    void* out,
-                    const size_t outlen);
-
 // Declared in hmac_sha256.h
 size_t hmac_sha256(const void* key,
                    const size_t keylen,
@@ -87,10 +81,10 @@ static void* H(const void* x,
   return result;
 }
 
-static void* sha256(const void* data,
-                    const size_t datalen,
-                    void* out,
-                    const size_t outlen) {
+void* sha256(const void* data,
+             const size_t datalen,
+             void* out,
+             const size_t outlen) {
   size_t sz;
   Sha256Context ctx;
   SHA256_HASH hash;

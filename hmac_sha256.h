@@ -29,6 +29,12 @@ hmac_sha256(
     void* out,
     const size_t outlen);
 
+// Wrapper for sha256
+void* sha256(const void* data,
+             const size_t datalen,
+             void* out,
+             const size_t outlen);
+
 #ifdef __cplusplus
 }
 #endif  // __cplusplus
